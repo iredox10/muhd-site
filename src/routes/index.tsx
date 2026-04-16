@@ -36,17 +36,24 @@ export function Index() {
             <div className="absolute inset-0 bg-neutral-200 rounded-[2rem] transform rotate-3 transition-transform duration-700 group-hover:rotate-6"></div>
             <div className="absolute inset-0 bg-rose-100 rounded-[2rem] transform -rotate-2 transition-transform duration-700 group-hover:-rotate-4"></div>
             
-            <div className="relative h-full w-full bg-white rounded-[2rem] shadow-2xl shadow-neutral-900/10 overflow-hidden border border-neutral-100 p-8 flex flex-col justify-between transform transition-transform duration-700 hover:-translate-y-2">
-              <div className="w-16 h-16 rounded-2xl bg-neutral-950 flex items-center justify-center text-white mb-auto shadow-lg">
-                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"></path></svg>
+            <div className="relative h-full w-full bg-white rounded-[2rem] shadow-2xl shadow-neutral-900/10 overflow-hidden border border-neutral-100 flex flex-col justify-between transform transition-transform duration-700 hover:-translate-y-2 group-hover:scale-100">
+              <div className="absolute inset-0 z-0">
+                <img src="https://images.unsplash.com/photo-1549465220-1a8b9238cd48?q=80&w=800&auto=format&fit=crop" alt="Premium Gift Box" className="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-1000" />
+                <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/40 to-transparent"></div>
               </div>
               
-              <div>
-                <h3 className="font-serif text-3xl font-bold mb-4 text-balance">The Executive Box</h3>
-                <p className="text-neutral-500 mb-8 leading-relaxed">A luxury curation of branded essentials, perfect for high-value clients and executive teams.</p>
-                <div className="flex items-center justify-between border-t border-neutral-100 pt-6">
-                  <span className="font-medium text-lg text-neutral-900">From ₦45,000</span>
-                  <span className="text-rose-600 font-semibold cursor-pointer hover:underline underline-offset-4 decoration-2">Shop Now</span>
+              <div className="relative z-10 p-8 pt-auto flex flex-col h-full justify-between">
+                <div className="w-16 h-16 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-white mb-auto shadow-lg">
+                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"></path></svg>
+                </div>
+                
+                <div className="mt-auto text-white">
+                  <h3 className="font-serif text-3xl font-bold mb-4 text-balance">The Executive Box</h3>
+                  <p className="text-neutral-200 mb-8 leading-relaxed">A luxury curation of branded essentials, perfect for high-value clients and executive teams.</p>
+                  <div className="flex items-center justify-between border-t border-white/20 pt-6">
+                    <span className="font-medium text-lg">From ₦45,000</span>
+                    <span className="text-rose-400 font-semibold cursor-pointer hover:underline underline-offset-4 decoration-2">Shop Now</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -80,8 +87,7 @@ export function Index() {
               <div className="aspect-[4/3] bg-[#F5F5F0] rounded-2xl overflow-hidden relative mb-6">
                 <div className="absolute inset-0 bg-gradient-to-t from-neutral-900/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10"></div>
                 <div className="w-full h-full bg-neutral-200 transform transition-transform duration-700 group-hover:scale-105 flex items-center justify-center text-neutral-400">
-                  {/* Mock Image Placeholder */}
-                  <span className="font-serif italic text-2xl">Souvenirs</span>
+                  <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?q=80&w=1000&auto=format&fit=crop" alt="Wedding Souvenirs" className="w-full h-full object-cover" />
                 </div>
               </div>
               <h3 className="text-2xl font-bold font-serif mb-2 group-hover:text-rose-600 transition-colors">Wedding & Event Souvenirs</h3>
@@ -93,8 +99,7 @@ export function Index() {
               <div className="aspect-[4/3] bg-[#F5F5F0] rounded-2xl overflow-hidden relative mb-6">
                 <div className="absolute inset-0 bg-gradient-to-t from-neutral-900/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10"></div>
                 <div className="w-full h-full bg-rose-50 transform transition-transform duration-700 group-hover:scale-105 flex items-center justify-center text-rose-300">
-                  {/* Mock Image Placeholder */}
-                  <span className="font-serif italic text-2xl">Branding</span>
+                  <img src="https://images.unsplash.com/photo-1586075010923-2dd4570fb338?q=80&w=1000&auto=format&fit=crop" alt="Brand Identity Print" className="w-full h-full object-cover" />
                 </div>
               </div>
               <h3 className="text-2xl font-bold font-serif mb-2 group-hover:text-rose-600 transition-colors">Brand Identity & Print</h3>
@@ -106,8 +111,7 @@ export function Index() {
               <div className="aspect-[4/3] bg-[#F5F5F0] rounded-2xl overflow-hidden relative mb-6">
                 <div className="absolute inset-0 bg-gradient-to-t from-neutral-900/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10"></div>
                 <div className="w-full h-full bg-neutral-900 transform transition-transform duration-700 group-hover:scale-105 flex items-center justify-center text-neutral-700">
-                  {/* Mock Image Placeholder */}
-                  <span className="font-serif italic text-2xl">Corporate</span>
+                  <img src="https://images.unsplash.com/photo-1558024220-b4afce668d88?q=80&w=1000&auto=format&fit=crop" alt="Corporate Gifting" className="w-full h-full object-cover opacity-80" />
                 </div>
               </div>
               <h3 className="text-2xl font-bold font-serif mb-2 group-hover:text-rose-600 transition-colors">Corporate Gifting</h3>
@@ -120,8 +124,8 @@ export function Index() {
       {/* Trust/Banner Section */}
       <section className="bg-rose-600 text-white py-24 px-6 relative overflow-hidden">
         {/* Decorative background typography */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-serif text-[20vw] opacity-10 font-black whitespace-nowrap pointer-events-none select-none italic">
-          GIFT PRINT
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-serif text-[15vw] opacity-10 font-black whitespace-nowrap pointer-events-none select-none italic">
+          AS DESIGN CRAFT
         </div>
         
         <div className="max-w-4xl mx-auto text-center relative z-10">

@@ -16,16 +16,14 @@ function About() {
         </h1>
         
         <div className="aspect-video w-full bg-neutral-200 rounded-[2rem] mb-24 overflow-hidden relative">
-          <div className="absolute inset-0 bg-neutral-900/5 mix-blend-multiply"></div>
-          <div className="w-full h-full flex items-center justify-center text-neutral-400 italic font-serif text-2xl">
-            Atelier / Studio Image
-          </div>
+          <img src="https://images.unsplash.com/photo-1497215848147-3bd443df13b1?q=80&w=2000&auto=format&fit=crop" alt="AS Design Craft Studio" className="w-full h-full object-cover grayscale opacity-90" />
+          <div className="absolute inset-0 bg-neutral-900/10 mix-blend-multiply"></div>
         </div>
 
         <div className="prose prose-lg md:prose-xl text-neutral-600 mx-auto font-light leading-relaxed text-left">
           <p className="drop-cap">
-            <span className="float-left text-7xl font-serif font-bold text-neutral-950 mr-4 leading-none mt-2">G</span>
-            iftPrint began with a simple observation: the Nigerian printing and corporate gifting industry was saturated with low-quality, mass-produced items that failed to capture the true essence of the brands they represented.
+            <span className="float-left text-7xl font-serif font-bold text-neutral-950 mr-4 leading-none mt-2">A</span>
+            S Design Craft began with a simple observation: the Nigerian printing and corporate gifting industry was saturated with low-quality, mass-produced items that failed to capture the true essence of the brands they represented.
           </p>
           <p className="mt-8">
             We set out to change that. Operating out of our state-of-the-art facilities in Kano and Katsina, we merge traditional craftsmanship with modern printing technology. 

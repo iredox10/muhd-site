@@ -13,12 +13,12 @@ function Catalog() {
   ];
 
   const products = [
-    { id: 1, title: "The Executive Box", price: "₦45,000", category: "Corporate Packages", imgColor: "bg-neutral-900" },
-    { id: 2, title: "Premium Matte Business Cards (x100)", price: "₦12,500", category: "Business Print", imgColor: "bg-rose-50" },
-    { id: 3, title: "Minimalist Ceramic Mug", price: "₦5,000", category: "Drinkware", imgColor: "bg-stone-200" },
-    { id: 4, title: "Luxury Paper Bags (x50)", price: "₦35,000", category: "Bags & Packaging", imgColor: "bg-neutral-100" },
-    { id: 5, title: "Foil Stamped Letterheads", price: "₦28,000", category: "Business Print", imgColor: "bg-orange-50" },
-    { id: 6, title: "Onboarding Kit", price: "₦30,000", category: "Corporate Packages", imgColor: "bg-blue-50" },
+    { id: 1, title: "The Executive Box", price: "₦45,000", category: "Corporate Packages", image: "https://images.unsplash.com/photo-1549465220-1a8b9238cd48?q=80&w=800&auto=format&fit=crop", imgColor: "bg-neutral-900" },
+    { id: 2, title: "Premium Matte Business Cards (x100)", price: "₦12,500", category: "Business Print", image: "https://images.unsplash.com/photo-1586075010923-2dd4570fb338?q=80&w=800&auto=format&fit=crop", imgColor: "bg-rose-50" },
+    { id: 3, title: "Minimalist Ceramic Mug", price: "₦5,000", category: "Drinkware", image: "https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?q=80&w=800&auto=format&fit=crop", imgColor: "bg-stone-200" },
+    { id: 4, title: "Luxury Paper Bags (x50)", price: "₦35,000", category: "Bags & Packaging", image: "https://images.unsplash.com/photo-1558024220-b4afce668d88?q=80&w=800&auto=format&fit=crop", imgColor: "bg-neutral-100" },
+    { id: 5, title: "Foil Stamped Letterheads", price: "₦28,000", category: "Business Print", image: "https://images.unsplash.com/photo-1512486130939-2c4f79935e4f?q=80&w=800&auto=format&fit=crop", imgColor: "bg-orange-50" },
+    { id: 6, title: "Onboarding Kit", price: "₦30,000", category: "Corporate Packages", image: "https://images.unsplash.com/photo-1513885058097-f586940eb1d2?q=80&w=800&auto=format&fit=crop", imgColor: "bg-blue-50" },
   ];
 
   return (
@@ -56,8 +56,8 @@ function Catalog() {
             {products.map((product) => (
               <div key={product.id} className="group cursor-pointer">
                 <div className={`aspect-[4/5] w-full ${product.imgColor} rounded-2xl mb-6 relative overflow-hidden flex items-center justify-center`}>
+                  <img src={product.image} alt={product.title} className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" />
                   <div className="absolute inset-0 bg-neutral-900/0 group-hover:bg-neutral-900/5 transition-colors duration-300"></div>
-                  <span className="font-serif italic text-neutral-400 opacity-50 mix-blend-multiply text-xl">{product.category}</span>
                 </div>
                 <div className="flex justify-between items-start gap-4">
                   <div>
