@@ -4,6 +4,7 @@ import { products } from '../data/products'
 import { useCartStore } from '../store/cartStore'
 import { ShoppingBag, ArrowLeft, Check } from 'lucide-react'
 import { useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 
 export const productDetailRoute = new Route({
   getParentRoute: () => rootRoute,
@@ -35,7 +36,12 @@ function ProductDetail() {
   };
 
   return (
-    <div className="min-h-screen bg-white pt-10 pb-32">
+    <motion.div 
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="min-h-screen bg-white pt-10 pb-32"
+    >
       <div className="max-w-screen-xl mx-auto px-6 md:px-12">
         <Link to="/catalog" className="inline-flex items-center text-sm font-medium text-neutral-500 hover:text-neutral-900 mb-10 transition-colors">
           <ArrowLeft className="w-4 h-4 mr-2" />
@@ -44,9 +50,25 @@ function ProductDetail() {
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           {/* Image Gallery */}
-          <div className="space-y-4">
+          <motion.div 
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="space-y-4"
+          >
             <div className={`aspect-square w-full rounded-3xl overflow-hidden ${product.imgColor} flex items-center justify-center p-8`}>
-              <img src={activeImage} alt={product.title} className="w-full h-full object-cover shadow-2xl rounded-2xl" />
+              <AnimatePresence mode="wait">
+                <motion.img 
+                  key={activeImage}
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 1.05 }}
+                  transition={{ duration: 0.4 }}
+                  src={activeImage} 
+                  alt={product.title} 
+                  className="w-full h-full object-cover shadow-2xl rounded-2xl" 
+                />
+              </AnimatePresence>
             </div>
             {product.gallery && product.gallery.length > 1 && (
               <div className="flex gap-4 overflow-x-auto pb-2">
@@ -61,10 +83,15 @@ function ProductDetail() {
                 ))}
               </div>
             )}
-          </div>
+          </motion.div>
 
           {/* Product Info */}
-          <div className="flex flex-col pt-8">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+            className="flex flex-col pt-8"
+          >
             <div className="mb-2 text-rose-600 font-bold uppercase tracking-wider text-sm">
               {product.category}
             </div>
@@ -82,7 +109,9 @@ function ProductDetail() {
               </ul>
             </div>
 
-            <button 
+            <motion.button 
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
               onClick={handleAdd}
               className={`mt-auto w-full py-5 rounded-full font-bold uppercase tracking-wider transition-all duration-300 flex items-center justify-center gap-3 ${
                 added ? 'bg-green-600 text-white' : 'bg-neutral-900 text-white hover:bg-neutral-800'
@@ -90,14 +119,14 @@ function ProductDetail() {
             >
               {added ? <Check className="w-5 h-5" /> : <ShoppingBag className="w-5 h-5" />}
               {added ? 'Added to Cart' : 'Add to Cart - ' + product.price}
-            </button>
+            </motion.button>
             
             <p className="text-center text-sm text-neutral-500 mt-4">
               Free nationwide delivery on orders over ₦100,000.
             </p>
-          </div>
+          </motion.div>
         </div>
       </div>
-    </div>
+    </motion.div>
   )
 }
