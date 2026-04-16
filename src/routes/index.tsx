@@ -1,3 +1,5 @@
+import { Link } from '@tanstack/react-router'
+
 export function Index() {
   return (
     <div className="w-full relative antialiased">
@@ -20,13 +22,13 @@ export function Index() {
           </p>
           
           <div className="flex flex-col sm:flex-row items-start sm:items-center space-y-4 sm:space-y-0 sm:space-x-6">
-            <button className="bg-neutral-900 text-white hover:bg-rose-600 px-10 py-5 rounded-full text-lg font-medium transition-all duration-300 shadow-xl hover:shadow-rose-500/25 active:scale-95 flex items-center gap-3">
+            <Link to="/catalog" className="bg-neutral-900 text-white hover:bg-rose-600 px-10 py-5 rounded-full text-lg font-medium transition-all duration-300 shadow-xl hover:shadow-rose-500/25 active:scale-95 flex items-center gap-3">
               Explore Catalog
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-            </button>
-            <button className="px-10 py-5 rounded-full text-lg font-medium text-neutral-900 border border-neutral-300 hover:border-rose-600 hover:text-rose-600 transition-all duration-300">
+            </Link>
+            <Link to="/corporate" className="px-10 py-5 rounded-full text-lg font-medium text-neutral-900 border border-neutral-300 hover:border-rose-600 hover:text-rose-600 transition-all duration-300">
               Corporate Orders
-            </button>
+            </Link>
           </div>
         </div>
 
@@ -52,7 +54,7 @@ export function Index() {
                   <p className="text-neutral-200 mb-8 leading-relaxed">A luxury curation of branded essentials, perfect for high-value clients and executive teams.</p>
                   <div className="flex items-center justify-between border-t border-white/20 pt-6">
                     <span className="font-medium text-lg">From ₦45,000</span>
-                    <span className="text-rose-400 font-semibold cursor-pointer hover:underline underline-offset-4 decoration-2">Shop Now</span>
+                    <Link to="/catalog" className="text-rose-400 font-semibold cursor-pointer hover:underline underline-offset-4 decoration-2">Shop Now</Link>
                   </div>
                 </div>
               </div>
@@ -75,10 +77,10 @@ export function Index() {
               </h2>
               <p className="text-xl text-neutral-500 max-w-md font-light">We combine premium materials with unmatched craftsmanship to bring your ideas to life.</p>
             </div>
-            <button className="text-neutral-900 font-semibold border-b-2 border-neutral-900 pb-1 hover:text-rose-600 hover:border-rose-600 transition-colors uppercase tracking-wider text-sm flex items-center gap-2">
+            <Link to="/catalog" className="text-neutral-900 font-semibold border-b-2 border-neutral-900 pb-1 hover:text-rose-600 hover:border-rose-600 transition-colors uppercase tracking-wider text-sm flex items-center gap-2">
               View All Categories 
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-            </button>
+            </Link>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
