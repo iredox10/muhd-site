@@ -1,10 +1,9 @@
-import { RootRoute, Route } from '@tanstack/react-router'
-import { Root } from './routes/__root'
+import { Route } from '@tanstack/react-router'
+import { rootRoute } from './routes/__root'
 import { Index } from './routes/index'
-
-const rootRoute = new RootRoute({
-  component: Root,
-})
+import { catalogRoute } from './routes/catalog'
+import { corporateRoute } from './routes/corporate'
+import { aboutRoute } from './routes/about'
 
 const indexRoute = new Route({
   getParentRoute: () => rootRoute,
@@ -12,4 +11,9 @@ const indexRoute = new Route({
   component: Index,
 })
 
-export const routeTree = rootRoute.addChildren([indexRoute])
+export const routeTree = rootRoute.addChildren([
+  indexRoute,
+  catalogRoute,
+  corporateRoute,
+  aboutRoute,
+])
